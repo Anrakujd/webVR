@@ -4,12 +4,30 @@ margin: 40px;
 }
 
 nav a{
-margin-left: 10 px;
-text-decoration: none;
-color: #007acc;
+  transition: 0.3s;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold; 
+}
+
+.navbar{
+  background-color:#004466;
+  padding: 10px 20px;
+}
+
+.navbar ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar li{
+display: inline;
 }
 
 nav a:hover{
 text-decoration: underline;
-
+color: #ffcc00;
 }
