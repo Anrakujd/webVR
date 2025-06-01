@@ -1,40 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gerak Jatuh Bebas</title>
+    <title>Gerak Jatuh Bebas Minimal</title>
 
-    <!-- A-Frame -->
-    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <!-- Pakai versi A-Frame 1.2.0 -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 
-    <!-- Physics system (DON'T duplicate) -->
-    <script src="https://cdn.jsdelivr.net/npm/aframe-physics-system@4.0.1/dist/aframe-physics-system.min.js"></script>
-
+    <!-- Physics system versi 3.3.0 -->
+    <script src="https://cdn.rawgit.com/n5ro/aframe-physics-system/v3.3.0/dist/aframe-physics-system.min.js"></script>
   </head>
+
   <body>
     <a-scene physics="gravity: -9.8">
-
-      <!-- Lantai -->
-      <a-plane 
-        color="#7BC8A4" 
-        static-body 
-        scale="5 5 1" 
-        rotation="-90 0 0" 
-        position="0 0 0">
-      </a-plane>
-
-      <!-- Bola jatuh -->
-      <a-sphere 
-        color="#FF0000" 
-        radius="0.5" 
-        position="0 4 -3" 
-        dynamic-body>
-      </a-sphere>
-
-      <!-- Kamera default -->
-      <a-entity position="0 1.6 4">
-        <a-camera></a-camera>
-      </a-entity>
-
+      <a-plane static-body rotation="-90 0 0" width="10" height="10" color="#7BC8A4"></a-plane>
+      <a-sphere dynamic-body position="0 5 -3" radius="0.5" color="red"></a-sphere>
+      <a-entity position="0 1.6 5"><a-camera></a-camera></a-entity>
     </a-scene>
   </body>
 </html>
+
+
+​
