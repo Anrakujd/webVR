@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Gerak Jatuh Bebas</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/n5ro/aframe-physics-system/v3.3.0/dist/aframe-physics-system.min.js"></script>
-  </head>
-  <body>
-    <a-scene physics="gravity: -9.8">
-      <a-plane color="#7BC8A4" static-body rotation="-90 0 0" width="10" height="10"></a-plane>
-      <a-sphere color="red" radius="0.5" position="0 5 -3" dynamic-body></a-sphere>
-      <a-entity position="0 1.6 5">
-        <a-camera></a-camera>
-      </a-entity>
-    </a-scene>
-  </body>
-</html>
+<head>
+  <title>Bola Jatuh Bebas dan Memantul</title>
+  <!-- A-Frame versi stabil yang cocok dengan physics -->
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <!-- Physics system compatible dengan A-Frame 1.2.0 -->
+  <script src="https://cdn.rawgit.com/n5ro/aframe-physics-system/v3.3.0/dist/aframe-physics-system.min.js"></script>
+</head>
+<body>
+  <a-scene physics="gravity: -9.8" embedded>
+    <!-- Lantai sebagai bidang statis -->
+    <a-plane 
+      static-body 
+      position="0 0 0" 
+      rotation="-90 0 0" 
+      width="10" 
+      height="10" 
+      color="#7BC8A4">
+    </a-plane>
 
-​
+    <!-- Bola dengan tubuh dinamis, atribut restitution supaya memantul -->
+    <a-sphere 
+      dynamic-body="restitution: 0.8; friction: 0.2;" 
+      position="0 5 -3" 
+      radius="0.5" 
+      color="red">
+    </a-sphere>
+
+    <!-- Kamera -->
+    <a-entity position="0 1.6 5">
+      <a-camera></a-camera>
+    </a-entity>
+  </a-scene>
+</body>
+</html>
